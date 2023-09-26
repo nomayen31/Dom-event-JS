@@ -6,8 +6,19 @@
     <title>js-Dom-Events</title>
 </head>
 <body>
-    <h1>Dom er special event</h1>
-    <button>Click ME </button>
+    <h1 onclick="console.log('this is hading teg');">Dom er special event</h1>
+    <button title="this is a tooltip" onclick="console.log(7)">Click ME </button>
+    <button onclick="console.log(65)">Another Button</button>
+    <br>
+
+    <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow</button>
+    <button onclick="makeRed()">Make red</button>
+    <button id="make_blue">Make Blue</button>
+    <button id="make_purple">Make purple</button>
+
     <script src="./js/events.js"></script>
+    <script>
+      
+    </script>
 </body>
-</html>
+</html> 
