@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js-Dom-Events</title>
+    <title>my-try</title>
 </head>
-
 <body>
-    <h1 onclick="console.log('this is hading teg');">Dom er special event</h1>
-    <button title="this is a tooltip" onclick="console.log(7)">Click ME </button>
-    <button onclick="console.log(65)">Another Button</button>
-    <br>
+    <h1 style="text-align: center; color: blue; font-size: 48px;">Your important note </h1>
+    <div id="comment-container" ">
+        <h1  style="background-color:blueviolet; color: white;">My day</h1>
+        <!-- <p style="border: 1px solid rgb(175, 31, 197); padding: 20px; font-size: 30px; color:white; font-weight: bold; text-transform: uppercase;">hello</p> -->
+        
+    </div>
+    <hr style="background-color:chartreuse; height: 1px;">
 
-    <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow</button>
-    <button onclick="makeRed()">Make red</button>
-    <button id="make_blue">Make Blue</button>
-    <button id="make_purple">Make purple</button>
-    <button id="make_pink">Make Pink</button>
-    <button id="make_green">Make Green</button>
-    <button id="make_goldenrod">Make Orange </button>
 
-    
-    <script src="./js/events.js"></script>
+    <div>
+        <textarea style="background-color:lightslategrey; color: rgb(255, 255, 255); font-size: 25px; " name="" id="new-comment" cols="30" rows="10"></textarea>
+        <br>
+        <button id="btn-post" style="margin-top: 20px; padding: 25px; background-color: rgb(175, 31, 197); color: wheat;">Add Note</button>
+    </div>
+
     <script>
-      document.getElementById('make_goldenrod').addEventListener('click', function(){
-        document.body.style.backgroundColor = 'orange';
-      })
+            document.getElementById('btn-post').addEventListener('click', function(){
+             const comment_box = document.getElementById('new-comment');
+             const newComment = comment_box.value;
+             const commentContainer = document.getElementById('comment-container');
+              const li = document.createElement('li');
+              li.setAttribute("style","border: 1px solid rgb(175, 31, 197); padding: 20px; font-size: 30px; color:black; font-weight: bold; text-transform: uppercase;")
+              li.innerText = newComment;
+              commentContainer.appendChild(li)
+              comment_box.value= ''
+
+             
+            })
     </script>
 </body>
-
 </html>
-
